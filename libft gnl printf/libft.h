@@ -41,6 +41,25 @@ void				ft_which_one(char c, va_list arg, int *ret);
 int					ft_scan_printf(int i, char *str, int ret, va_list arg);
 int					ft_printf(const char *str, ...);
 
+// Malloc et free
+void				*ft_free_malloc(t_m_free *m_free, size_t size);
+void				ft_free(t_m_free *m_free);
+int				ft_free_size(t_m_free *m_free);
+void				ft_free_remove(t_m_free *m_free, void *ptr);
+t_m_free			*ft_free_init(void);
+int				ft_free_add(t_m_free *m_free, void *ptr);
+
+typedef struct s_free
+{
+	void			*ptr;
+	struct s_free	*next;
+}	t_free;
+
+typedef struct s_m_free
+{
+	struct s_free	*list;
+}	t_m_free;
+
 
 // PT.1
 int		ft_isalpha(int c);
