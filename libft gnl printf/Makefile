@@ -51,7 +51,13 @@ SRCS = 	ft_isalpha.c \
 	   get_next_line.c \
 	   libftprintf.c \
 	   ft_utils.c \
-	   ft_address.c
+	   ft_address.c \
+	   ft_free_add.c \
+	   ft_free_init.c \
+	   ft_free_remove_if.c \
+	   ft_free_size.c \
+	   ft_free.c \
+	   ft_malloc.c \
 
 
 SRCS_BONUS = ft_lstnew.c \
