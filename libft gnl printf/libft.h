@@ -20,9 +20,9 @@
 // GNL
 # include <fcntl.h>
 # include <unistd.h>
-# include "../libft/libft.h"
+// # include "../libft/libft.h"
 
-void	ft_free(char *ptr);
+void	ft_free_gnl(char *ptr);
 char	*get_next_line(int fd);
 int		ft_read(int fd, char **buf, char **s_buff, char **line);
 char	*ft_get_line(char **line, char **s_buff);
@@ -42,12 +42,6 @@ int					ft_scan_printf(int i, char *str, int ret, va_list arg);
 int					ft_printf(const char *str, ...);
 
 // Malloc et free
-void				*ft_free_malloc(t_m_free *m_free, size_t size);
-void				ft_free(t_m_free *m_free);
-int				ft_free_size(t_m_free *m_free);
-void				ft_free_remove(t_m_free *m_free, void *ptr);
-t_m_free			*ft_free_init(void);
-int				ft_free_add(t_m_free *m_free, void *ptr);
 
 typedef struct s_free
 {
@@ -60,8 +54,16 @@ typedef struct s_m_free
 	struct s_free	*list;
 }	t_m_free;
 
+void				*ft_free_malloc(t_m_free *m_free, size_t size);
+void				ft_free(t_m_free *m_free);
+int				ft_free_size(t_m_free *m_free);
+void				ft_free_remove(t_m_free *m_free, void *ptr);
+t_m_free			*ft_free_init(void);
+int				ft_free_add(t_m_free *m_free, void *ptr);
 
 // PT.1
+void	ft_putstr(char *s);
+void	ft_putchar(char c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);

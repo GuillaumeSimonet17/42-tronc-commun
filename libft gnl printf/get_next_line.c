@@ -17,7 +17,7 @@
 # define BUFFER_SIZE 1
 #endif
 
-void	ft_free(char *ptr)
+void	ft_free_gnl(char *ptr)
 {
 	if (ptr)
 	{
@@ -46,7 +46,7 @@ char	*get_next_line(int fd)
 		s_buff = ft_strdup("");
 	if (ft_read(fd, &buf, &s_buff, &line) == 0 && *line == '\0')
 	{
-		ft_free(line);
+		ft_free_gnl(line);
 		return (NULL);
 	}
 	return (line);
@@ -64,9 +64,9 @@ int	ft_read(int fd, char **buf, char **s_buff, char **line)
 		(*buf)[ret] = '\0';
 		temp = *s_buff;
 		*s_buff = ft_strjoin(*s_buff, *buf);
-		ft_free(temp);
+		ft_free_gnl(temp);
 	}
-	ft_free(*buf);
+	ft_free_gnl(*buf);
 	ft_get_line(line, s_buff);
 	return (ret);
 }
@@ -90,6 +90,6 @@ char	*ft_get_line(char **line, char **s_buff)
 		*line = ft_strdup(tmp);
 		*s_buff = NULL;
 	}
-	ft_free(tmp);
+	ft_free_gnl(tmp);
 	return (*line);
 }

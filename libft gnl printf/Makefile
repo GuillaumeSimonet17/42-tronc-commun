@@ -14,7 +14,9 @@ RMR = rm -rf
 
 PATH_OBJ = ./.objs/
 
-SRCS = 	ft_isalpha.c \
+SRCS = 	ft_putchar.c \
+		ft_putstr.c \
+		ft_isalpha.c \
 	   ft_isdigit.c \
 	   ft_isalnum.c \
 	   ft_isascii.c \
